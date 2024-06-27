@@ -5,3 +5,5 @@ Moderation Features
 AutoMod
 
 Music Features
+
+Image Manipulation, (features to tag other players and make an image with two avatars on it)
