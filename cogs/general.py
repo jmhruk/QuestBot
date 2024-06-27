@@ -1,6 +1,7 @@
 from discord.ext import commands
 from discord import Embed
 import random
+import wikipedia
 
 class General(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -18,6 +19,23 @@ class General(commands.Cog):
     async def randomnumber(self, ctx, n1:int, n2:int):
         await ctx.reply(str(random.randint(n1, n2)))
 
+    @commands.command(name="membercount")
+    async def membercount(self, ctx):
+        await ctx.reply("Current Member Count: " + str(ctx.guild.member_count))
+
+    @commands.command(name="wikipedia")
+    async def wikipedia(self, ctx, *query):
+        d = ""
+        try:
+            page = wikipedia.page(query)
+            await ctx.reply(wikipedia.summary(query, 10))
+        except wikipedia.exceptions.DisambiguationError as e:
+            print(e.options)
+            for x in e.options:
+                d = d + " " + x
+            await ctx.reply("**The Bot couldn't decide what you were looking for, please be more specific and run the same command with one of the items from the next list:** " + d +",")
+
+        #await ctx.reply(wikipedia.summary(query, 10))
 
 async def setup(bot):
     # Load cog 
