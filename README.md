@@ -1,0 +1,1 @@
+Hey! Welcome to this respoitory, this is the repo for my open source discord bot called QuestBot. Feel free to use any source code.
