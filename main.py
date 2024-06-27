@@ -9,7 +9,7 @@ load_dotenv()
 token = os.getenv("TOKEN")
 
 intents = Intents.all()
-bot = commands.Bot(intents=intents, command_prefix="$")
+bot = commands.Bot(intents=intents, command_prefix="!")
 bot.author_id = [733735829222195321]
 
 @bot.event
