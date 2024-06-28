@@ -37,6 +37,16 @@ class General(commands.Cog):
 
         #await ctx.reply(wikipedia.summary(query, 10))
 
+#
+#      Coming soon
+#
+    @commands.command(name="trivia")
+    async def trivia(self, ctx):
+        pass
+    @commands.command(name="translate")
+    async def translate(self, ctx):
+        pass
+
 async def setup(bot):
     # Load cog 
     await bot.add_cog(General(bot))
