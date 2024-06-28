@@ -15,7 +15,8 @@ bot.author_id = [733735829222195321]
 @bot.event
 async def on_ready():
     
-    await bot.load_extension("cogs.general")	
+    await bot.load_extension("cogs.general")
+    await bot.load_extension("cogs.moderation")	
 
     await bot.change_presence(activity=discord.Activity(
        type=discord.ActivityType.watching, name="Watching your server..."))
