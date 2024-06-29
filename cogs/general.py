@@ -37,10 +37,23 @@ class General(commands.Cog):
 
         #await ctx.reply(wikipedia.summary(query, 10))
     @commands.command(name="joke")
-    async def joke(self, ctx):
+    async def joke(self, ctx, type : str = None):
         #learning joke imports (api)
+        """Usage !joke {type} - the joke types are: [programming, miscellaneous, dark, pun]"""
         j = await Jokes()
-        joke = await j.get_joke()
+        if type != None:
+            if len(str(type)) > 0:
+                try:
+                    joke = await j.get_joke(category=[type])
+                except Exception as err:
+                    print(Exception)
+                    await ctx.reply("Please select a valid joke type.")
+            else:
+                joke = await j.get_joke()
+        else:
+            joke = await j.get_joke()
+
+        
         if joke["type"] == "single":
             await ctx.reply(joke["joke"])
         else:    
