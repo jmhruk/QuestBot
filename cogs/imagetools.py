@@ -11,7 +11,7 @@ class Imagetools(commands.Cog):
 
     @commands.command(name="slap")
     async def slap(self, ctx, user: discord.Member):
-        n = random.randint(1,10)
+        n = random.randint(1,1000)
         
         slap = Image.open("slap.png")
 
@@ -32,6 +32,8 @@ class Imagetools(commands.Cog):
                 print("Achievement Unlocked: How did we get here?")
         except requests.exceptions.MissingSchema:
             await ctx.send("One of the selected users doesn't have an avatar :(")
+
+            # in future to fix this, try get images another way or subsittue them
             
 
        

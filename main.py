@@ -18,10 +18,12 @@ async def on_ready():
     await bot.load_extension("cogs.general")
     await bot.load_extension("cogs.moderation")	
     await bot.load_extension("cogs.imagetools")
+    await bot.load_extension("cogs.music")
+    await bot.load_extension("cogs.downloader")
 
     await bot.change_presence(activity=discord.Activity(
        type=discord.ActivityType.watching, name="Watching your server..."))
     
     print("Bot is online!")
 
-bot.run(token)  # Starts the bot
+bot.run(token)  # Starts the bot\
