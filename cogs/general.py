@@ -1,6 +1,5 @@
 from discord.ext import commands
 from jokeapi import Jokes
-import asyncio
 import random
 import wikipedia
 

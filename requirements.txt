@@ -1,0 +1,15 @@
+discord
+dotenv
+os
+random
+asyncio
+functools
+itertools
+math
+yt_dlp
+async_timeout
+pillow
+requests
+wikipedia
+jokeapi
+pytube
