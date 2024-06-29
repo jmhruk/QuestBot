@@ -1,4 +1,6 @@
 from discord.ext import commands
+from jokeapi import Jokes
+import asyncio
 import random
 import wikipedia
 
@@ -35,8 +37,18 @@ class General(commands.Cog):
             await ctx.reply("**The Bot couldn't decide what you were looking for, please be more specific and run the same command with one of the items from the next list:** " + d +",")
 
         #await ctx.reply(wikipedia.summary(query, 10))
-
-#
+    @commands.command(name="joke")
+    async def joke(self, ctx):
+        #learning joke imports (api)
+        j = await Jokes()
+        joke = await j.get_joke()
+        if joke["type"] == "single":
+            await ctx.reply(joke["joke"])
+        else:    
+            setup = joke["setup"]
+            delivery = joke["delivery"]
+            await ctx.reply(str(setup) + "\n" + str(delivery))
+#   
 #      Coming soon
 #
     @commands.command(name="trivia")

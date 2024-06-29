@@ -13,7 +13,6 @@ class Moderation(commands.Cog):
         await ctx.send(embed=embed, delete_after=10.0)
         await ctx.channel.purge(limit=limit + 2)
 
-
 async def setup(bot):
     # Load cog 
-    await bot.add_cog(Moderation(bot))
+    await bot.add_cog(Moderation(bot))  
