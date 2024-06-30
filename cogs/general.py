@@ -2,7 +2,7 @@ from discord.ext import commands
 from jokeapi import Jokes
 import random
 import wikipedia
-
+from deep_translator import MyMemoryTranslator
 class General(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -63,13 +63,24 @@ class General(commands.Cog):
 #   
 #      Coming soon
 #
+    @commands.command(name="translate")
+    async def translate(self, ctx, lang_from,lang_to, *args):
+        """Usage !translate [lang_from] [lang_to] [sentence]"""
+        s = ""
+        for x in args:
+            print(x)
+            s = str(s + " " + x)
+    
+        print(s)
+        translated = MyMemoryTranslator(source=lang_from, target=lang_to).translate(text=s)
+        await ctx.reply(translated)
+        
     @commands.command(name="trivia")
     async def trivia(self, ctx):
+        #questions = await trivia.question(amount=1, category=2, difficulty='easy')
+        #print(questions)
         pass
-    @commands.command(name="translate")
-    async def translate(self, ctx):
-        pass
-
+        
 async def setup(bot):
     # Load cog 
     await bot.add_cog(General(bot))

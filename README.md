@@ -13,6 +13,7 @@ and many more coming soon!
 ## Installation
 1. Clone the repository
 2. Make sure all of the python modules in requirements.txt are installed on your system.
+3. Make sure ffmpeg is selected and you have set the path on music.py line 132
 3. Add your own token in main.py
 4. Run main.py and enjoy!
 

@@ -13,3 +13,5 @@ requests
 wikipedia
 jokeapi
 pytube
+deep-translator
+trivia
