@@ -16,6 +16,7 @@ bot.author_id = [733735829222195321]
 async def on_ready():
     
     await bot.load_extension("cogs.general")
+    await bot.load_extension("cogs.games")
     await bot.load_extension("cogs.moderation")	
     await bot.load_extension("cogs.imagetools")
     await bot.load_extension("cogs.music")

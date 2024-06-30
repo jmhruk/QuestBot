@@ -27,7 +27,7 @@ class General(commands.Cog):
     async def wikipedia(self, ctx, *query):
         d = ""
         try:
-            page = wikipedia.page(query)
+            page = wikipedia.page(" ".join(query[:]))
             await ctx.reply(wikipedia.summary(query, 10))
         except wikipedia.exceptions.DisambiguationError as e:
             print(e.options)
@@ -75,11 +75,6 @@ class General(commands.Cog):
         translated = MyMemoryTranslator(source=lang_from, target=lang_to).translate(text=s)
         await ctx.reply(translated)
         
-    @commands.command(name="trivia")
-    async def trivia(self, ctx):
-        #questions = await trivia.question(amount=1, category=2, difficulty='easy')
-        #print(questions)
-        pass
         
 async def setup(bot):
     # Load cog 
