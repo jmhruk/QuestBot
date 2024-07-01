@@ -3,6 +3,7 @@ from jokeapi import Jokes
 import random
 import wikipedia
 from deep_translator import MyMemoryTranslator
+
 class General(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
@@ -74,7 +75,6 @@ class General(commands.Cog):
         print(s)
         translated = MyMemoryTranslator(source=lang_from, target=lang_to).translate(text=s)
         await ctx.reply(translated)
-        
         
 async def setup(bot):
     # Load cog 

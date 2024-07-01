@@ -21,6 +21,8 @@ async def on_ready():
     await bot.load_extension("cogs.imagetools")
     await bot.load_extension("cogs.music")
     await bot.load_extension("cogs.downloader")
+    await bot.load_extension("cogs.qotd")
+    await bot.load_extension("cogs.weather")
 
     await bot.change_presence(activity=discord.Activity(
        type=discord.ActivityType.watching, name="Watching your server..."))
