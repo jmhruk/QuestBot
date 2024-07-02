@@ -13,6 +13,10 @@ bot = commands.Bot(intents=intents, command_prefix="!")
 bot.author_id = [733735829222195321]
 
 @bot.event
+async def on_member_join(member):
+    pass
+
+@bot.event
 async def on_ready():
     
     await bot.load_extension("cogs.general")
@@ -23,6 +27,9 @@ async def on_ready():
     await bot.load_extension("cogs.downloader")
     await bot.load_extension("cogs.qotd")
     await bot.load_extension("cogs.weather")
+    await bot.load_extension("cogs.valorant")
+    await bot.load_extension("cogs.stats")
+
 
     await bot.change_presence(activity=discord.Activity(
        type=discord.ActivityType.watching, name="Watching your server..."))

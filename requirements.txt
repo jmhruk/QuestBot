@@ -15,3 +15,4 @@ jokeapi
 pytube
 deep-translator
 python_weather
+valorant
