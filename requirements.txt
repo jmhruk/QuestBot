@@ -1,11 +1,5 @@
 discord
-dotenv
-os
-random
-asyncio
-functools
-itertools
-math
+python-dotenv
 yt_dlp
 async_timeout
 pillow
@@ -16,3 +10,4 @@ pytube
 deep-translator
 python_weather
 valorant
+trivia
